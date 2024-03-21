@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CONNECT HUB</title>
+
+
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="{% static 'css/login.css'%}">
+</head>
+
+<body class="overflow-x-hidden ">
+	{%if messages%}
+	{%for m in messages%}
+
+	{%endfor%}
+	{%endif%}
+<div id="container" class="container">
+		<!-- FORM SECTION -->
+		<div class="row">
+			<!-- SIGN UP -->
+			<div class="col align-items-center flex-col sign-up">
+				<div class="form-wrapper align-items-center">
+					<form action="" method="post">
+						{%csrf_token%}
+						<div class="form sign-up">
+							<div class="input-group">
+								<i class='bx bxs-user'></i>
+								<input type="text" class="form-control  text-center" name="first_name"
+									placeholder="enter your name">
+							</div>
+							<div class="input-group">
+								<i class='bx bxs-user'></i>
+								<input type="text" class="form-control  text-center" name="username"
+									placeholder="Username">
+							</div>
+							<div class="input-group">
+								<i class='bx bx-mail-send'></i>
+								<input type="email" class="form-control  text-center" name="email" placeholder="Email">
+							</div>
+							<div class="input-group">
+								<i class='bx bxs-lock-alt'></i>
+								<input type="password" class="form-control  text-center" name="password1"
+									placeholder="Password">
+							</div>
+							<div class="input-group">
+								<i class='bx bxs-lock-alt'></i>
+								<input type="password" class="form-control  text-center" name="password2"
+									placeholder=" Confirm Password">
+							</div>
+							<button type="submit" name="signup">
+								Sign up
+							</button>
+							<p>
+								<span>
+									Already have an account?
+								</span>
+								<b onclick="toggle()" class="pointer">
+									Sign in here
+								</b>
+							</p>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- END SIGN UP -->
+			<!-- SIGN IN -->
+			<div class="col align-items-center flex-col sign-in">
+				<div class="form-wrapper align-items-center">
+					<form action="" method="post">
+						{%csrf_token%}
+						<div class="form sign-in">
+							<div class="input-group">
+								<i class='bx bxs-user'></i>
+								<input type="text" name="username" placeholder="username">
+							</div>
+							<div class="input-group">
+								<i class='bx bxs-lock-alt'></i>
+								<input type="password" name="password" placeholder="password">
+							</div>
+							<button type="submit" name="signin">
+								Sign in
+							</button>
+					</form>
+					<p>
+						<b>
+							Forgot password?
+						</b>
+					</p>
+					<p>
+						<span>
+							Don't have an account?
+						</span>
+						<b onclick="toggle()" class="pointer">
+							Sign up here
+						</b>
+					</p>
+				</div>
+			</div>
+			<div class="form-wrapper">
+
+			</div>
+		</div>
+		<!-- END SIGN IN -->
+	</div>
+	<!-- END FORM SECTION -->
+	<!-- CONTENT SECTION -->
+	<div class="row content-row">
+		<!-- SIGN IN CONTENT -->
+		<div class="col align-items-center flex-col">
+			<div class="text sign-in">
+				<h2>
+					Welcome To Connet Hub
+				</h2>
+
+			</div>
+			<div class="img sign-in">
+
+			</div>
+		</div>
+		<!-- END SIGN IN CONTENT -->
+		<!-- SIGN UP CONTENT -->
+		<div class="col align-items-center flex-col">
+			<div class="img sign-up">
+
+			</div>
+			<div class="text sign-up">
+				<h2>
+					Join with us
+				</h2>
+				<h2>
+					& Meet New Friends
+				</h2>
+
+			</div>
+		</div>
+		<!-- END SIGN UP CONTENT -->
+	</div>
+	<!-- END CONTENT SECTION -->
+	</div>
+
+</body>
+<script src="{% static 'js/login.js'%}"></script>
+
+</html>
